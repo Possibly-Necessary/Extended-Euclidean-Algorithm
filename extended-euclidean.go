@@ -32,7 +32,7 @@ func EXTD_EUCLID(a, b int) (r, s, t int, err error) {
 		t[1] = 1
 
 		// while rk-1 (which is b) is not 0
-		// Go lang does not have while-loops
+		// Golang does not have while-loops
 		// for loops are used instead
 		//index := k-1
 
