@@ -5,12 +5,12 @@ def extdEuclid(a, b):
 
     k=2 # Index
 
-    str = ''
+    err_str = None
 
-    # Check if conditions are satisfied, then begin the algorith
+    # Check if conditions are satisfied, then begin the algorithm
     if not (a>=0 and b>0 and a>=b):
         str = "Condition are not satisfied... "
-        return 0, 0, 0, str # if conditions are not satisfied
+        return 0, 0, 0, err_str # if conditions are not satisfied
 
     # Initilize the (empty) arrays r, s and t of size k
     r = [None for _ in range(k)]
@@ -28,7 +28,7 @@ def extdEuclid(a, b):
         s.append(int(s[k-2]-(q*s[k-1])))
         t.append(int(t[k-2]-(q*t[k-1])))
         k += 1
-    return r[len(r)-2], s[len(s)-2], t[len(t)-2], str
+    return r[len(r)-2], s[len(s)-2], t[len(t)-2], err_str
 
 def gcd(a,b):
     if b==0:
@@ -66,11 +66,11 @@ def userInpt():
 a, b = userInpt()
 
 # Execute the Extended Euclidean function and get the results
-r, s, t, str= extdEuclid(a, b)
+r, s, t, strr= extdEuclid(a, b)
 
 # Check if the string is not empty, that means the conditions were not satisfied
-if str != None:
-    print(str)
+if strr != None:
+    print(strr)
 
 print(f'r: {r}, s: {s}, t: {t}')
 
